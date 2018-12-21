@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.effect.Blend?>
-<?import javafx.scene.effect.Light.Distant?>
-<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -12,7 +12,7 @@
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <ImageView fx:id="img" fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="autoBtn" layoutX="40.0" layoutY="32.0" mnemonicParsing="false" onAction="#autoBtnfunc" prefHeight="31.0" prefWidth="69.0" text="auto">
+      <Button fx:id="autoBtn" layoutX="64.0" layoutY="32.0" mnemonicParsing="false" onAction="#autoBtnfunc" prefHeight="31.0" prefWidth="69.0" text="auto">
          <effect>
             <Blend />
          </effect></Button>
@@ -21,17 +21,14 @@
       <Button fx:id="leftbtn" layoutX="414.0" layoutY="143.0" mnemonicParsing="false" onAction="#leftfunc" prefHeight="50.0" prefWidth="50.0" style="-fx-background-image: url(file:/../left.png);" stylesheets="@upbtnstyle.css" />
       <Button fx:id="rightbtn" layoutX="514.0" layoutY="143.0" mnemonicParsing="false" onAction="#rightfunc" prefHeight="50.0" prefWidth="50.0" style="-fx-background-image: url(file:/../right.png);" stylesheets="@upbtnstyle.css" />
       <Button fx:id="downbtn" layoutX="464.0" layoutY="143.0" mnemonicParsing="false" onAction="#downfunc" prefHeight="50.0" prefWidth="50.0" style="-fx-background-image: url(file:/../down.png);" stylesheets="@upbtnstyle.css" />
-      <TextArea fx:id="Console" editable="false" layoutY="201.0" pickOnBounds="false" prefHeight="63.0" prefWidth="258.0" promptText="Welcome to the DCS Car GUI" wrapText="true">
+      <TextArea fx:id="Console" editable="false" layoutY="274.0" pickOnBounds="false" prefHeight="63.0" prefWidth="258.0" promptText="Welcome to the DCS Car GUI" wrapText="true">
          <font>
             <Font size="13.0" />
          </font>
          <effect>
-            <Lighting bumpInput="$null">
-               <light>
-                  <Light.Distant />
-               </light>
-            </Lighting>
+            <DropShadow />
          </effect>
       </TextArea>
+      <Label fx:id="lbl" layoutY="72.0" style="-fx-font-weight: bold; -fx-background-color: white;" text="Label" visible="false" />
    </children>
 </Pane>
