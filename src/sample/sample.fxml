@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
@@ -30,5 +31,6 @@
          </effect>
       </TextArea>
       <Label fx:id="lbl" layoutY="72.0" style="-fx-font-weight: bold; -fx-background-color: white;" text="Label" visible="false" />
+      <PieChart fx:id="pieChart" labelsVisible="false" layoutX="19.0" layoutY="83.0" legendVisible="false" prefHeight="182.0" prefWidth="220.0" />
    </children>
 </Pane>

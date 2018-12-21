@@ -1,7 +1,10 @@
 package sample;
 
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -31,6 +34,8 @@ public class Controller {
     TextArea Console;
     @FXML
     Label lbl;
+    @FXML
+    PieChart pieChart;
     URL upmsg, downmsg, rightmsg, leftmsg, stopmsg, rstmsg, manmsg, automsg;
     InputStream is = null;
     int[] Brightness_str = new int[360];
@@ -276,14 +281,13 @@ public class Controller {
             }
         }, 50, 50);
     }
-    /*private void SerialPortinit() {
 
-        try {
-            serialPort.openPort();
-            serialPort.setParams(115200, 8, 1, 0);
-        } catch (SerialPortException e) {
-            e.printStackTrace();
+    private void creatPiechart() {
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
+        for (int i = 0; i < 360; i++) {
+            pieChartData.add(new PieChart.Data("" + i, 10));
         }
+        pieChart.setData(pieChartData);
 
-    }*/
+    }
 }
